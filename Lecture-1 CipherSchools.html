@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Display</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <table id="data-table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Password</th>
+        </tr>
+    </table>
+
+    <script>
+     
+        var data = [
+            { ID: 1, Name: "Ashis Pradhan", Age: 22, Password: "12345" },
+            { ID: 4, Name: "Satyam Sir", Age:25, Password: "1234" }
+        ];
+
+        var table = document.getElementById("data-table");
+
+        
+        data.forEach(function (item) {
+            var row = table.insertRow();
+
+   
+            Object.values(item).forEach(function (value) {
+                var cell = row.insertCell();
+                cell.appendChild(document.createTextNode(value));
+            });
+        });
+    </script>
+</body>
+</html>
